@@ -31,6 +31,20 @@
                 </executions>
             </plugin>
         </plugins>
+
+        <plugin>
+            <groupId>org.jboss.as.plugins</groupId>
+            <artifactId>jboss-as-maven-plugin</artifactId>
+            <version>7.9.Final</version>
+            <inherited>true</inherited>
+            <configuration>
+                <hostname>${jboss.hostname}</hostname>
+                <port>${jboss.port}</port>
+                <username>${jboss.user}</username>
+                <password>${jboss.pass}</password>
+                <timeout>30000</timeout>
+            </configuration>
+        </plugin>
     </build>
 
     <repositories>
@@ -83,23 +97,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.jboss.as.plugins</groupId>
-                <artifactId>jboss-as-maven-plugin</artifactId>
-                <version>7.9.Final</version>
-                <inherited>true</inherited>
-                <configuration>
-                    <hostname>${jboss.hostname}</hostname>
-                    <port>${jboss.port}</port>
-                    <username>${jboss.user}</username>
-                    <password>${jboss.pass}</password>
-                    <timeout>30000</timeout>
-                </configuration>
-            </plugin>
-        </plugins>
-        <finalName>jsfdemo</finalName>
-    </build>
 </project>
